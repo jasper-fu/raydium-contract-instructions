@@ -303,13 +303,13 @@ pub struct SwapBaseIn<'info> {
     pub market_vault_signer: UncheckedAccount<'info>,
     /// CHECK: Safe. user source token Account. user Account to swap from.
     #[account(mut)]
-    pub user_token_source: UncheckedAccount<'info>,
+    pub user_token_source: AccountInfo<'info>,
     /// CHECK: Safe. user destination token Account. user Account to swap to.
     #[account(mut)]
-    pub user_token_destination: UncheckedAccount<'info>,
+    pub user_token_destination: AccountInfo<'info>,
     /// CHECK: Safe. user owner Account
     #[account(mut)]
-    pub user_source_owner: Signer<'info>,
+    pub user_source_owner: AccountInfo<'info>,
     /// CHECK: Safe. The spl token program
     pub token_program: Program<'info, Token>,
 }
